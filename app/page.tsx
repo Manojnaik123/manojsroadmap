@@ -1,65 +1,275 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState } from 'react';
+import {
+  ChevronDown,
+  ChevronRight,
+  Briefcase,
+  GraduationCap,
+  BookOpen,
+  Trophy,
+  Landmark,
+  Target,
+} from 'lucide-react';
+
+const roadmap = [
+  {
+    phase: 'Phase 1',
+    title: 'Emergency Stabilization',
+    timeline: 'June 2026 - September 2026',
+    icon: Briefcase,
+    color: 'border-red-500',
+    goal: 'Get first income source and secure MCA continuation.',
+    details: {
+      objective:
+        'Financial stability is the highest priority. Income solves MCA fees, confidence, and future planning.',
+      dailyPlan: [
+        '2 Hours DSA',
+        '3 Hours Job Applications',
+        '3 Hours Project Building',
+      ],
+      targets: [
+        '20-30 job applications daily',
+        '150-200 applications monthly',
+        'First tech income source',
+        'MCA fee planning',
+      ],
+      projects: [
+        'Job Tracker (Next.js + PostgreSQL)',
+        'AI Portfolio Website',
+        'Full Stack SaaS Project',
+      ],
+      skills: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'PostgreSQL',
+        'Git',
+        'Docker Basics',
+      ],
+    },
+  },
+  {
+    phase: 'Phase 2',
+    title: 'MCA Completion',
+    timeline: 'Oct 2026 - Jun 2027',
+    icon: GraduationCap,
+    color: 'border-orange-500',
+    goal: 'Complete MCA without backlogs.',
+    details: {
+      objective:
+        'Finish degree while continuing to gain work experience.',
+      focus: [
+        'Pay remaining fees',
+        'Complete assignments',
+        'Clear all exams',
+        'Avoid backlogs',
+        'Continue earning',
+      ],
+      milestone: 'MCA Degree Completed',
+    },
+  },
+  {
+    phase: 'Phase 3',
+    title: 'CS Foundation Building',
+    timeline: '2027',
+    icon: BookOpen,
+    color: 'border-blue-500',
+    goal: 'Master Computer Science fundamentals.',
+    details: {
+      subjects: [
+        'Operating Systems',
+        'DBMS',
+        'Computer Networks',
+        'OOP',
+        'System Design Basics',
+        'Data Structures',
+        'Algorithms',
+      ],
+      outcome:
+        'Strong interview performance and GATE readiness.',
+    },
+  },
+  {
+    phase: 'Phase 4',
+    title: 'GATE Preparation',
+    timeline: '2027 - 2028',
+    icon: Trophy,
+    color: 'border-green-500',
+    goal: 'Open higher education and research opportunities.',
+    details: {
+      subjects: [
+        'Engineering Mathematics',
+        'DSA',
+        'DBMS',
+        'OS',
+        'CN',
+        'TOC',
+        'Compiler Design',
+      ],
+      strategy: [
+        'Previous Year Questions',
+        'Weekly Mock Tests',
+        'Revision Cycles',
+        'Concept Mastery',
+      ],
+    },
+  },
+  {
+    phase: 'Phase 5',
+    title: 'Financial Independence',
+    timeline: '2028',
+    icon: Target,
+    color: 'border-purple-500',
+    goal: 'Become fully self-sustainable.',
+    details: {
+      expectations: [
+        'MCA Completed',
+        '2+ Years Experience',
+        'Emergency Fund',
+        'Better Salary',
+        'Professional Confidence',
+      ],
+      target:
+        'Build stable income and savings before bigger risks.',
+    },
+  },
+  {
+    phase: 'Phase 6',
+    title: 'UPSC Decision Point',
+    timeline: '2028 - 2030',
+    icon: Landmark,
+    color: 'border-yellow-500',
+    goal: 'Attempt UPSC from a position of strength.',
+    details: {
+      conditions: [
+        'Stable Job',
+        'Savings Available',
+        'MCA Completed',
+        'No Financial Pressure',
+      ],
+      note:
+        'Prepare because you want civil services, not because you need a career.',
+    },
+  },
+];
+
+export default function CareerCommandCenter() {
+  const [open, setOpen] = useState<number | null>(0);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#0f1117] text-white">
+      <div className="max-w-6xl mx-auto px-4 py-10">
+
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-300 text-sm">
+            Career Command Center
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-bold mt-4">
+            Manoj's 2026 → 2030 Roadmap
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-zinc-400 mt-4 text-lg max-w-3xl">
+            Job → MCA Completion → CS Foundation → GATE →
+            Financial Independence → UPSC
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="mb-10 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-6">
+          <h2 className="text-2xl font-bold text-orange-300 mb-4">
+            Current Mission (Next 90 Days)
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4 text-zinc-200">
+            <div>✅ Get a Software Job</div>
+            <div>✅ Pay MCA Fees</div>
+            <div>✅ Build Portfolio Projects</div>
+            <div>✅ Improve DSA</div>
+            <div>✅ Complete MCA Requirements</div>
+            <div>✅ Create Financial Stability</div>
+          </div>
         </div>
-      </main>
+
+        <div className="relative">
+          <div className="absolute left-5 top-0 h-full w-[2px] bg-zinc-700" />
+
+          {roadmap.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <div key={index} className="relative mb-6">
+                <div
+                  className={`absolute left-0 top-5 h-10 w-10 rounded-full bg-[#181c24] border-4 ${item.color} flex items-center justify-center`}
+                >
+                  <Icon size={18} />
+                </div>
+
+                <div className="ml-16">
+                  <button
+                    onClick={() =>
+                      setOpen(open === index ? null : index)
+                    }
+                    className="w-full text-left bg-[#181c24] border border-zinc-800 rounded-2xl p-5 hover:border-orange-400 transition"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-orange-300">
+                          {item.phase}
+                        </p>
+
+                        <h3 className="text-xl font-semibold">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-zinc-500 mt-1">
+                          {item.timeline}
+                        </p>
+
+                        <p className="text-zinc-300 mt-3">
+                          {item.goal}
+                        </p>
+                      </div>
+
+                      {open === index ? (
+                        <ChevronDown />
+                      ) : (
+                        <ChevronRight />
+                      )}
+                    </div>
+
+                    {open === index && (
+                      <div className="mt-6 border-t border-zinc-700 pt-6">
+                        <pre className="whitespace-pre-wrap text-zinc-300 text-sm leading-7">
+                          {JSON.stringify(item.details, null, 2)}
+                        </pre>
+                      </div>
+                    )}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-zinc-800 bg-[#181c24] p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Reminder
+          </h2>
+
+          <p className="text-zinc-300 leading-8">
+            Your biggest challenge is not GATE. It is not UPSC.
+            It is achieving financial stability while finishing MCA.
+            Every step above is designed to move you from uncertainty
+            toward independence. Focus on the current phase only.
+            Do not fight battles from future phases yet.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
+
