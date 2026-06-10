@@ -161,7 +161,7 @@ export default function CareerCommandCenter() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-[#0f1117] text-white">
+    <div className="min-h-screen bg-[#0f1117] text-white text-sm">
       <div className="max-w-6xl mx-auto px-4 py-10">
 
         <div className="mb-10">
@@ -169,7 +169,7 @@ export default function CareerCommandCenter() {
             Career Command Center
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mt-4">
+          <h1 className="text-3xl md:text-4xl font-bold mt-4">
             Manoj's 2026 → 2030 Roadmap
           </h1>
 
@@ -180,7 +180,7 @@ export default function CareerCommandCenter() {
         </div>
 
         <div className="mb-10 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-6">
-          <h2 className="text-2xl font-bold text-orange-300 mb-4">
+          <h2 className="text-lg font-bold text-orange-300 mb-4">
             Current Mission (Next 90 Days)
           </h2>
 
@@ -221,7 +221,7 @@ export default function CareerCommandCenter() {
                           {item.phase}
                         </p>
 
-                        <h3 className="text-xl font-semibold">
+                        <h3 className="text-base font-semibold">
                           {item.title}
                         </h3>
 
@@ -256,7 +256,7 @@ export default function CareerCommandCenter() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-zinc-800 bg-[#181c24] p-6">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-lg font-bold mb-4">
             Reminder
           </h2>
 
